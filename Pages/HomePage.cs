@@ -7,13 +7,11 @@ using System.Threading.Tasks;
 
 namespace specflowdemo.Pages
 {
-    internal class HomePage
+    public class HomePage
     {
-        private IWebDriver driver;
-
         public HomePage(IWebDriver driver)
         {
-            this.driver = driver;
+
         }
     }
 }

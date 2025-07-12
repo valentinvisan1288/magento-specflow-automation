@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace specflowdemo.Pages
+namespace specflowdemo.Utilities
 {
-    internal class ProductDetailPage
+    internal class BaseConfigReader
     {
     }
 }

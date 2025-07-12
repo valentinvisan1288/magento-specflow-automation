@@ -1,7 +1,8 @@
 ﻿using OpenQA.Selenium;
 using specflowdemo.Pages;
 using specflowdemo.Utilities;
-using specflowdemo.Utilities.Configuration;
+using specflowdemo.Utilities.Config;
+
 
 public class RegisterActions
 {
@@ -23,11 +24,11 @@ public class RegisterActions
 
     public void FillRegistrationForm(string firstNameKey, string lastNameKey, string emailKey, string passwordKey)
     {
-        _registerPage.FillFirstName(LocatorsReader.Get(firstNameKey));
-        _registerPage.FillLastName(LocatorsReader.Get(lastNameKey));
-        _registerPage.FillEmail(LocatorsReader.Get(emailKey));
-        _registerPage.FillPassword(LocatorsReader.Get(passwordKey));
-        _registerPage.FillConfirmPassword(LocatorsReader.Get(passwordKey)); // usually same as password
+        _registerPage.FillFirstName(LocatorReader.Get(firstNameKey));
+        _registerPage.FillLastName(LocatorReader.Get(lastNameKey));
+        _registerPage.FillEmail(LocatorReader.Get(emailKey));
+        _registerPage.FillPassword(LocatorReader.Get(passwordKey));
+        _registerPage.FillConfirmPassword(LocatorReader.Get(passwordKey)); // usually same as password
     }
 
     public void SubmitForm()
