@@ -1,0 +1,56 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+
+# Build results
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+*.log
+secrets.json
+
+
+# Visual Studio IDE
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+# Rider
+.idea/
+
+# Test results
+TestResults/
+*.vsidx
+*.vsp
+*.vspx
+*.sap
+*.cache
+
+# SpecFlow
+*.feature.cs
+*.feature.xlsx.cs
+*.specflow.cs
+*.feature.vsdoc
+*.Steps.cs
+
+# ReqnRoll
+*.ReqnRoll.log
+*.ReqnRoll.output
+*.ReqnRoll.debug
+
+# NUnit or other test runners
+*.nunit.xml
+*.trx
+
+# User-specific files
+*.dbmdl
+*.pdb
