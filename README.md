@@ -1,1 +1,1 @@
-# specflowdemo
+# QA Assignment for Magento page
