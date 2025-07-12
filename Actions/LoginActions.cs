@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium;
-using specflowdemo.Utilities.Configuration;
+using specflowdemo.Utilities.Config;
 
 namespace MagentoSpecflowAutomation.Actions
 {
@@ -19,21 +19,21 @@ namespace MagentoSpecflowAutomation.Actions
 
         public void FillInLoginForm(string emailKey, string passwordKey)
         {
-            _driver.FindElement(By.CssSelector(ConfigReader.GetLocator("LoginEmailField")))
-                   .SendKeys(ConfigReader.GetAccountValue(emailKey));
+            _driver.FindElement(By.CssSelector(LocatorReader.Get("LoginEmailField")))
+                   .SendKeys(LocatorReader.Get(emailKey));
 
-            _driver.FindElement(By.CssSelector(ConfigReader.GetLocator("LoginPasswordField")))
-                   .SendKeys(ConfigReader.GetAccountValue(passwordKey));
+            _driver.FindElement(By.CssSelector(LocatorReader.Get("LoginPasswordField")))
+                   .SendKeys(LocatorReader.Get(passwordKey));
         }
 
         public void SubmitLogin()
         {
-            _driver.FindElement(By.CssSelector(ConfigReader.GetLocator("LoginSubmitButton"))).Click();
+            _driver.FindElement(By.CssSelector(LocatorReader.Get("LoginSubmitButton"))).Click();
         }
 
         public string GetMyAccountHeader()
         {
-            return _driver.FindElement(By.CssSelector(ConfigReader.GetLocator("MyAccountHeader"))).Text;
+            return _driver.FindElement(By.CssSelector(LocatorReader.Get("MyAccountHeader"))).Text;
         }
     }
 }

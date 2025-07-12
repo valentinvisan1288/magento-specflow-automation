@@ -1,9 +1,8 @@
 {
-  "URLs": {
+  "Urls": {
     "HomePage": "https://magento.softwaretestingboard.com",
     "LoginPage": "https://magento.softwaretestingboard.com/customer/account/login",
     "RegisterPage": "https://magento.softwaretestingboard.com/customer/account/create/"
-
   },
   "Accounts": {
     "ValidEmail": "magentovalentin@test123.com",
@@ -23,6 +22,11 @@
     "RegisterEmailTextBox": "//input[@id='email_address']",
     "RegisterPasswordTextBox": "//input[@id='password']",
     "RegisterConfirmPasswordTextBox": "//input[@id='password-confirmation']"
-    //"CreateAnAccountButton": "//button[@title='Create an Account']"
+  },
+  "LoginPage": {
+    "EmailInput": "magentovalentin@test123.com",
+    "PasswordInput": "#ZNQ4jtPzHHfJMj",
+    "SignInButton": "//button[@id='send2']",
+    "ErrorMessage": ".message-error"
   }
 }
