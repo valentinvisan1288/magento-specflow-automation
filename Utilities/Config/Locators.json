@@ -1,0 +1,8 @@
+{
+  "LoginPage": {
+    "EmailInput": "magentovalentin@test123.com",
+    "PasswordInput": "#ZNQ4jtPzHHfJMj",
+    "SignInButton": "#send2",
+    "ErrorMessage": ".message-error"
+  }
+}

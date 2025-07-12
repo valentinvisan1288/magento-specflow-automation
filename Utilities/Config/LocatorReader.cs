@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace specflowdemo.StepDefinitions
+namespace specflowdemo.Utilities.Config
 {
-    internal class Accounts
+    internal class LocatorReader
     {
     }
 }
