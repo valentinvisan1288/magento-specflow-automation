@@ -1,15 +1,23 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
 
 namespace specflowdemo.Utilities.Configuration
 {
     public static class ConfigReader
     {
-        private static JObject configData;
+        private static Dictionary<string, string> _config;
 
         static ConfigReader()
         {
-            var configFile = File.ReadAllText("Configuration/config.json");
-            configData = JObject.Parse(configFile);
+            var configText = File.ReadAllText("Utilities/Config/config.json");
+            _config = JsonSerializer.Deserialize<Dictionary<string, string>>(configText);
+        }
+
+        public static string GetUrl(string key)
+        {
+            if (_config.ContainsKey(key))
+                return _config[key];
+
+            throw new KeyNotFoundException($"Key '{key}' not found in config.json.");
         }
 
         public static string BaseUrl => configData["BaseUrl"].ToString();

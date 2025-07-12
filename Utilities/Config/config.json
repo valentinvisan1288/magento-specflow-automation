@@ -1,7 +1,9 @@
 {
   "URLs": {
     "HomePage": "https://magento.softwaretestingboard.com",
-    "LoginPage": "https://magento.softwaretestingboard.com/customer/account/login"
+    "LoginPage": "https://magento.softwaretestingboard.com/customer/account/login",
+    "RegisterPage": "https://magento.softwaretestingboard.com/customer/account/create/"
+
   },
   "Accounts": {
     "ValidEmail": "magentovalentin@test123.com",
@@ -15,6 +17,12 @@
     "LoginPasswordInput": "//input[@id='pass']",
     "SignInButton": "//button[@id='send2']",
     "ForgotPasswordButton": "//a[@class='action remind']",
-    "CreateAnAccountButton": "//button[span[text()='Create an Account']]"
+    "CreateAnAccountButton": "//button[span[text()='Create an Account']]",
+    "FirstNameTextBox": "//input[@id='firstname']",
+    "LastNameTextBox": "//input[@id='lastname']",
+    "RegisterEmailTextBox": "//input[@id='email_address']",
+    "RegisterPasswordTextBox": "//input[@id='password']",
+    "RegisterConfirmPasswordTextBox": "//input[@id='password-confirmation']"
+    //"CreateAnAccountButton": "//button[@title='Create an Account']"
   }
 }
