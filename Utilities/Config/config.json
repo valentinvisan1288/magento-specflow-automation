@@ -1,0 +1,20 @@
+{
+  "URLs": {
+    "HomePage": "https://magento.softwaretestingboard.com",
+    "LoginPage": "https://magento.softwaretestingboard.com/customer/account/login"
+  },
+  "Accounts": {
+    "ValidEmail": "magentovalentin@test123.com",
+    "ValidPassword": "StrongPassword123!",
+    "InvalidEmail": "wrong_user_magento@test123.com",
+    "InvalidPassword": "(WrongPass456!"
+  },
+  "Locators": {
+    "SignInHeaderButton": "//header//li[@class='authorization-link']/a",
+    "LoginEmailInput": "//input[@id='email']",
+    "LoginPasswordInput": "//input[@id='pass']",
+    "SignInButton": "//button[@id='send2']",
+    "ForgotPasswordButton": "//a[@class='action remind']",
+    "CreateAnAccountButton": "//button[span[text()='Create an Account']]"
+  }
+}
