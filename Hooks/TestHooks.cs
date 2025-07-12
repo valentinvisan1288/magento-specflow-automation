@@ -1,5 +1,6 @@
 using OpenQA.Selenium;
 using specflowdemo.Drivers;
+using TechTalk.SpecFlow;
 //using ScreenshotImageFormat = OpenQA.Selenium.Screenshot;
 
 namespace specflowdemo.Hooks
@@ -8,7 +9,7 @@ namespace specflowdemo.Hooks
     public sealed class TestHooks
     {
         private readonly ScenarioContext _scenarioContext;
-        private IWebDriver _driver;
+        private IWebDriver? _driver;
 
         public TestHooks(ScenarioContext scenarioContext)
         {
