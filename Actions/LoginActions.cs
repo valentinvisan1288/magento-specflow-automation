@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using specflowdemo.Utilities.Config;
 
+
 namespace MagentoSpecflowAutomation.Actions
 {
     public class LoginActions
@@ -19,21 +20,21 @@ namespace MagentoSpecflowAutomation.Actions
 
         public void FillInLoginForm(string emailKey, string passwordKey)
         {
-            _driver.FindElement(By.CssSelector(LocatorReader.Get("LoginEmailField")))
-                   .SendKeys(LocatorReader.Get(emailKey));
+            _driver.FindElement(By.CssSelector(ConfigReader.GetSetting("LoginEmailInput")))
+                   .SendKeys(ConfigReader.GetCredential("ValidEmail"));
 
-            _driver.FindElement(By.CssSelector(LocatorReader.Get("LoginPasswordField")))
-                   .SendKeys(LocatorReader.Get(passwordKey));
+            _driver.FindElement(By.CssSelector(ConfigReader.GetSetting("LoginPasswordInput")))
+                   .SendKeys(ConfigReader.GetCredential(passwordKey));
         }
 
         public void SubmitLogin()
         {
-            _driver.FindElement(By.CssSelector(LocatorReader.Get("LoginSubmitButton"))).Click();
+            _driver.FindElement(By.CssSelector(ConfigReader.GetSetting("LoginSubmitButton"))).Click();
         }
 
         public string GetMyAccountHeader()
         {
-            return _driver.FindElement(By.CssSelector(LocatorReader.Get("MyAccountHeader"))).Text;
+            return _driver.FindElement(By.CssSelector(ConfigReader.GetSetting("MyAccountHeader"))).Text;
         }
     }
 }

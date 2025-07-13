@@ -24,11 +24,11 @@ public class RegisterActions
 
     public void FillRegistrationForm(string firstNameKey, string lastNameKey, string emailKey, string passwordKey)
     {
-        _registerPage.FillFirstName(LocatorReader.Get(firstNameKey));
-        _registerPage.FillLastName(LocatorReader.Get(lastNameKey));
-        _registerPage.FillEmail(LocatorReader.Get(emailKey));
-        _registerPage.FillPassword(LocatorReader.Get(passwordKey));
-        _registerPage.FillConfirmPassword(LocatorReader.Get(passwordKey)); // usually same as password
+        _registerPage.FillFirstName(ConfigReader.GetSetting(firstNameKey));
+        _registerPage.FillLastName(ConfigReader.GetSetting(lastNameKey));
+        _registerPage.FillEmail(ConfigReader.GetSetting(emailKey));
+        _registerPage.FillPassword(ConfigReader.GetSetting(passwordKey));
+        _registerPage.FillConfirmPassword(ConfigReader.GetSetting(passwordKey));
     }
 
     public void SubmitForm()
