@@ -1,0 +1,25 @@
+{
+  "bindingCulture": {
+    "name": "en-US"
+  },
+  "language": {
+    "feature": "en"
+  },
+  "specFlowVersion": "3.9.22",
+  "generatorVersion": "3.9.22",
+  "plugins": [
+    {
+      "name": "SpecFlow.Plus.LivingDocPlugin",
+      "type": "Generator"
+    }
+  ],
+  "traceLevel": "Verbose",
+  "exclude": [
+    "**/bin",
+    "**/bower_components",
+    "**/jspm_packages",
+    "**/node_modules",
+    "**/obj",
+    "**/platforms"
+  ]
+}

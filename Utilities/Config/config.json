@@ -27,6 +27,6 @@
     "EmailInput": "magentovalentin@test123.com",
     "PasswordInput": "#ZNQ4jtPzHHfJMj",
     "SignInButton": "//button[@id='send2']",
-    "ErrorMessage": ".message-error"
+    "LoginErrorMessage": "//div[contains(@class, 'message-error') and @data-ui-id='message-error']/div"
   }
 }
