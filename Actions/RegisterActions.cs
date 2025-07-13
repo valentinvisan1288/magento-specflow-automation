@@ -1,8 +1,6 @@
 ﻿using OpenQA.Selenium;
 using specflowdemo.Pages;
-using specflowdemo.Utilities;
 using specflowdemo.Utilities.Config;
-
 
 public class RegisterActions
 {

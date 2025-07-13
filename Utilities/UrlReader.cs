@@ -2,7 +2,7 @@
 
 public static class UrlReader
 {
-    public static string Get(string key)
+    public static string? Get(string key)
     {
         var json = File.ReadAllText("config.json");
         var jsonObj = JObject.Parse(json);

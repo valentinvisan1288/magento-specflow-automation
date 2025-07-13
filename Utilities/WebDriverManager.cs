@@ -5,7 +5,7 @@ namespace specflowdemo.Utilities
 {
     public class WebDriverManager
     {
-        private static IWebDriver _driver;
+        private static IWebDriver? _driver;
 
         public static IWebDriver GetDriver()
         {
