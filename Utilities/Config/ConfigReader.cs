@@ -4,7 +4,7 @@ namespace specflowdemo.Utilities.Config
 {
     public static class ConfigReader
     {
-        private static JObject _config;
+        private static readonly JObject _config;
 
         static ConfigReader()
         {
@@ -13,24 +13,14 @@ namespace specflowdemo.Utilities.Config
             _config = JObject.Parse(configContent);
         }
 
-        public static string? GetUrl(string key)
+        public static string GetUrl(string key)
         {
-            return _config["Urls"]?[key]?.ToString();
+            return _config["Urls"][key].ToString();
         }
 
-        public static string? GetCredential(string key)
+        public static string GetSetting(string key)
         {
-            return _config["Credentials"]?[key]?.ToString();
-        }
-
-        public static string? GetTestData(string key)
-        {
-            return _config["TestData"]?[key]?.ToString();
-        }
-
-        public static string? GetSetting(string key)
-        {
-            return _config["Settings"]?[key]?.ToString();
+            return _config["Settings"][key].ToString();
         }
     }
 }

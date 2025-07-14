@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using specflowdemo.Utilities.Config;
-using TechTalk.SpecFlow;
 using MagentoSpecflowAutomation.Actions;
 using FluentAssertions;
 
@@ -26,14 +25,15 @@ namespace specflowdemo.StepDefinitions
         public void GivenUserNavigatesToLoginPage()
         {
             _loginActions.NavigateToLoginPage();
+            _loginActions.DismissNoticeIfPresent();
         }
 
         [When("the registered user submits valid login credentials")]
         public void WhenRegisteredUserSubmitsValidCredentials()
         {
             _loginActions.FillInLoginForm(
-                ConfigReader.GetCredential("ValidEmail"),
-                ConfigReader.GetCredential("ValidPassword")
+                ConfigReader.GetSetting("ValidEmail"),
+                ConfigReader.GetSetting("ValidPassword")
             );
         }
 
@@ -41,8 +41,8 @@ namespace specflowdemo.StepDefinitions
         public void WhenAnonymousUserSubmitsInvalidCredentials()
         {
             _loginActions.FillInInvalidLoginForm(
-                ConfigReader.GetCredential("InvalidEmail"),
-                ConfigReader.GetCredential("InvalidPassword")
+                ConfigReader.GetSetting("InvalidEmail"),
+                ConfigReader.GetSetting("InvalidPassword")
             );
         }
 

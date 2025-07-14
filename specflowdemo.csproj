@@ -4,27 +4,37 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<LangVersion>latest</LangVersion>
-		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+		<IsTestProject>true</IsTestProject>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="Features\Login.feature" />
-	</ItemGroup>
-	<ItemGroup>
-		<PackageReference Include="FluentAssertions" Version="8.5.0" />
-		<PackageReference Include="Selenium.WebDriver" Version="4.20.0" />
-		<PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="124.0.6367.6000" />
-		<PackageReference Include="SpecFlow" Version="3.9.74" />
-		<PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
-		<PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.74" PrivateAssets="all" />
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<None Remove="Utilities\Config\config.json" />
+		<Page Include="Utilities\Config\config.json" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Update="Features\**\*.feature">
-			<LastGenOutput>%(Filename).feature.cs</LastGenOutput>
+		<PackageReference Include="NUnit" Version="3.13.3" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+		<PackageReference Include="FluentAssertions" Version="8.5.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="Selenium.Support" Version="4.34.0" />
+		<PackageReference Include="Selenium.WebDriver" Version="4.34.0" />
+		<PackageReference Include="SpecFlow" Version="3.9.74" />
+		<PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
+		<PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.74" PrivateAssets="all" />
+		<PackageReference Include="WebDriverManager" Version="2.17.5" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="Utilities\Config\config.json">
+			<Link>Config\config.json</Link>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="specflowdemo\obj\Debug\net8.0\Config\" />
 	</ItemGroup>
 
 </Project>

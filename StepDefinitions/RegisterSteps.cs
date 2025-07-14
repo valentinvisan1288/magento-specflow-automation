@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using TechTalk.SpecFlow;
 using specflowdemo.Utilities.Config;
-using specflowdemo.Utilities;
+using MagentoSpecflowAutomation.Actions;
+using OpenQA.Selenium.Support.UI;
 
 namespace specflowdemo.StepDefinitions
 {
@@ -11,12 +11,14 @@ namespace specflowdemo.StepDefinitions
         private readonly ScenarioContext _scenarioContext;
         private readonly IWebDriver _driver;
         private readonly RegisterActions _registerActions;
+        private readonly LoginActions _loginActions;
 
         public RegisterSteps(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
             _driver = (IWebDriver)_scenarioContext["WebDriver"];
             _registerActions = new RegisterActions(_driver);
+            _loginActions = new LoginActions(_driver);
         }
 
         [Given("an anonymous user has navigated to create an account from the main page")]
@@ -28,12 +30,8 @@ namespace specflowdemo.StepDefinitions
         [When("the anonymous user submits the mandatory account details")]
         public void WhenUserSubmitsMandatoryDetails()
         {
-            string firstName = "Valentin";
-            string lastName = "Test";
-            string password = "StrongPassword123!";
-            string uniqueEmail = DataGenerator.GenerateUniqueEmail();
-
-            _registerActions.FillRegistrationForm(firstName, lastName, uniqueEmail, password);
+            _loginActions.DismissNoticeIfPresent();
+            _registerActions.FillRegistrationForm();
             _registerActions.SubmitForm();
         }
 
@@ -45,7 +43,7 @@ namespace specflowdemo.StepDefinitions
 
             if (!actualUrl.StartsWith(expectedUrl))
             {
-                throw new Exception($"Expected to land on account page. Actual URL: {actualUrl}");
+                throw new Exception($"Expected to land on account page.");
             }
         }
     }
