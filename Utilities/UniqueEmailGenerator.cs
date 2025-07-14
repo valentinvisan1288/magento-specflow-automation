@@ -2,7 +2,7 @@
 
 namespace specflowdemo.Utilities
 {
-    public static class DataGenerator
+    public static class UniqueEmailGenerator
     {
         public static string GenerateUniqueEmail()
         {

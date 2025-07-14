@@ -2,7 +2,8 @@
   "Urls": {
     "HomePage": "https://magento.softwaretestingboard.com",
     "LoginPage": "https://magento.softwaretestingboard.com/customer/account/login",
-    "RegisterPage": "https://magento.softwaretestingboard.com/customer/account/create/"
+    "RegisterPage": "https://magento.softwaretestingboard.com/customer/account/create/",
+    "MyAccountPage": "https://magento.softwaretestingboard.com/customer/account/"
   },
   "Settings": {
     "DismissNoticeButton": "/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/button[1]/p",

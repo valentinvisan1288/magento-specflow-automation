@@ -1,6 +1,7 @@
 ﻿using AngleSharp.Dom;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using specflowdemo.Utilities;
 using specflowdemo.Utilities.Config;
 using System.Xml.Linq;
 
@@ -35,7 +36,7 @@ public class RegisterPage
 
     public void FillEmail()
         => WaitUntilClickable(By.XPath(ConfigReader.GetSetting("RegisterEmailTextBox")))
-                  .SendKeys(ConfigReader.GetSetting("ValidEmail"));
+                  .SendKeys(UniqueEmailGenerator.GenerateUniqueEmail());
 
     public void FillPassword()
         => WaitUntilClickable(By.XPath(ConfigReader.GetSetting("RegisterPasswordTextBox")))
