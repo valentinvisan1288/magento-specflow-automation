@@ -2,6 +2,7 @@
 using specflowdemo.Utilities.Config;
 using MagentoSpecflowAutomation.Actions;
 using OpenQA.Selenium.Support.UI;
+using FluentAssertions;
 
 namespace specflowdemo.StepDefinitions
 {
@@ -38,13 +39,7 @@ namespace specflowdemo.StepDefinitions
         [Then("the anonymous user will be redirected to the account page as a registered user")]
         public void ThenUserShouldLandOnAccountPage()
         {
-            string expectedUrl = "https://magento.softwaretestingboard.com/customer/account/";
-            string actualUrl = _driver.Url;
-
-            if (!actualUrl.StartsWith(expectedUrl))
-            {
-                throw new Exception($"Expected to land on account page.");
-            }
+            _loginActions.IsAccountPageDisplayed().Should().BeTrue("User should be redirected to the account page after registration.");
         }
     }
 }
