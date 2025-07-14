@@ -24,26 +24,23 @@ namespace specflowdemo.StepDefinitions
         [Given("an anonymous user has navigated to the login page from the main page")]
         public void GivenUserNavigatesToLoginPage()
         {
-            _loginActions.NavigateToLoginPage();
-            _loginActions.DismissNoticeIfPresent();
+            _loginActions.NavigateToLoginPage();      
         }
 
         [When("the registered user submits valid login credentials")]
         public void WhenRegisteredUserSubmitsValidCredentials()
         {
-            _loginActions.FillInLoginForm(
-                ConfigReader.GetSetting("ValidEmail"),
-                ConfigReader.GetSetting("ValidPassword")
-            );
+            _loginActions.DismissNoticeIfPresent();
+            _loginActions.FillInLoginForm();
+            _loginActions.SubmitLogin();
         }
 
         [When("the anonymous user submits invalid login credentials")]
         public void WhenAnonymousUserSubmitsInvalidCredentials()
         {
-            _loginActions.FillInInvalidLoginForm(
-                ConfigReader.GetSetting("InvalidEmail"),
-                ConfigReader.GetSetting("InvalidPassword")
-            );
+            _loginActions.DismissNoticeIfPresent();
+            _loginActions.FillInInvalidLoginForm();
+            _loginActions.SubmitLogin();
         }
 
         [Then("the registered user will be redirected to the account page")]

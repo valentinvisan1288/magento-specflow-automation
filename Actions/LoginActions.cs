@@ -19,22 +19,22 @@ namespace MagentoSpecflowAutomation.Actions
             _driver.Navigate().GoToUrl(ConfigReader.GetUrl("LoginPage"));
         }
 
-        public void FillInLoginForm(string emailKey, string passwordKey)
+        public void FillInLoginForm()
         {
-            _driver.FindElement(By.XPath(ConfigReader.GetSetting("LoginEmailInput")))
+            _driver.FindElement(By.XPath(ConfigReader.GetSetting("LoginEmailBox")))
                    .SendKeys(ConfigReader.GetSetting("ValidEmail"));
 
-            _driver.FindElement(By.XPath(ConfigReader.GetSetting("LoginPasswordInput")))
-                   .SendKeys(ConfigReader.GetSetting(passwordKey));
+            _driver.FindElement(By.XPath(ConfigReader.GetSetting("LoginPasswordBox")))
+                   .SendKeys(ConfigReader.GetSetting("ValidPassword"));
         }
 
-        public void FillInInvalidLoginForm(string emailKey, string passwordKey)
+        public void FillInInvalidLoginForm()
         {
-            _driver.FindElement(By.XPath(ConfigReader.GetSetting("InvalidEmail")))
-                   .SendKeys(ConfigReader.GetSetting("ValidEmail"));
+            _driver.FindElement(By.XPath(ConfigReader.GetSetting("LoginEmailBox")))
+                   .SendKeys(ConfigReader.GetSetting("InvalidEmail"));
 
-            _driver.FindElement(By.XPath(ConfigReader.GetSetting("InvalidPassword")))
-                   .SendKeys(ConfigReader.GetSetting(passwordKey));
+            _driver.FindElement(By.XPath(ConfigReader.GetSetting("LoginPasswordBox")))
+                   .SendKeys(ConfigReader.GetSetting("InvalidPassword"));
         }
 
         public void SubmitLogin()
