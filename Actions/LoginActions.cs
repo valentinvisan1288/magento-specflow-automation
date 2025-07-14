@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using specflowdemo.Utilities.Config;
 
 
@@ -20,30 +21,30 @@ namespace MagentoSpecflowAutomation.Actions
 
         public void FillInLoginForm(string emailKey, string passwordKey)
         {
-            _driver.FindElement(By.CssSelector(ConfigReader.GetSetting("LoginEmailInput")))
-                   .SendKeys(ConfigReader.GetCredential("ValidEmail"));
+            _driver.FindElement(By.XPath(ConfigReader.GetSetting("LoginEmailInput")))
+                   .SendKeys(ConfigReader.GetSetting("ValidEmail"));
 
-            _driver.FindElement(By.CssSelector(ConfigReader.GetSetting("LoginPasswordInput")))
-                   .SendKeys(ConfigReader.GetCredential(passwordKey));
+            _driver.FindElement(By.XPath(ConfigReader.GetSetting("LoginPasswordInput")))
+                   .SendKeys(ConfigReader.GetSetting(passwordKey));
         }
 
         public void FillInInvalidLoginForm(string emailKey, string passwordKey)
         {
-            _driver.FindElement(By.CssSelector(ConfigReader.GetSetting("InvalidEmail")))
-                   .SendKeys(ConfigReader.GetCredential("ValidEmail"));
+            _driver.FindElement(By.XPath(ConfigReader.GetSetting("InvalidEmail")))
+                   .SendKeys(ConfigReader.GetSetting("ValidEmail"));
 
-            _driver.FindElement(By.CssSelector(ConfigReader.GetSetting("InvalidPassword")))
-                   .SendKeys(ConfigReader.GetCredential(passwordKey));
+            _driver.FindElement(By.XPath(ConfigReader.GetSetting("InvalidPassword")))
+                   .SendKeys(ConfigReader.GetSetting(passwordKey));
         }
 
         public void SubmitLogin()
         {
-            _driver.FindElement(By.CssSelector(ConfigReader.GetSetting("LoginSubmitButton"))).Click();
+            _driver.FindElement(By.XPath(ConfigReader.GetSetting("LoginSubmitButton"))).Click();
         }
 
         public string GetMyAccountHeader()
         {
-            return _driver.FindElement(By.CssSelector(ConfigReader.GetSetting("MyAccountHeader"))).Text;
+            return _driver.FindElement(By.XPath(ConfigReader.GetSetting("MyAccountHeader"))).Text;
         }
 
         public void NavigateToLoginPage(string url)
@@ -52,9 +53,9 @@ namespace MagentoSpecflowAutomation.Actions
         }
         public void Login(string email, string password)
         {
-            _driver.FindElement(By.CssSelector(ConfigReader.GetSetting("LoginEmailInput"))).SendKeys(email);
-            _driver.FindElement(By.CssSelector(ConfigReader.GetSetting("LoginPasswordInput"))).SendKeys(password);
-            _driver.FindElement(By.CssSelector(ConfigReader.GetSetting("SignInButton"))).Click();
+            _driver.FindElement(By.XPath(ConfigReader.GetSetting("LoginEmailInput"))).SendKeys(email);
+            _driver.FindElement(By.XPath(ConfigReader.GetSetting("LoginPasswordInput"))).SendKeys(password);
+            _driver.FindElement(By.XPath(ConfigReader.GetSetting("SignInButton"))).Click();
         }
 
         public bool IsAccountPageDisplayed()
@@ -81,6 +82,26 @@ namespace MagentoSpecflowAutomation.Actions
                 return false;
             }
         }
+        public void DismissNoticeIfPresent()
+        {
+            var dismissLocator = ConfigReader.GetSetting("DismissNoticeButton");
+            if (string.IsNullOrEmpty(dismissLocator))
+                return;
 
+            try
+            {
+                var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
+                var button = wait.Until(driver =>
+                {
+                    var elements = driver.FindElements(By.XPath(dismissLocator));
+                    return elements.Count > 0 && elements[0].Displayed && elements[0].Enabled ? elements[0] : null;
+                });
+                button?.Click();
+            }
+            catch (WebDriverTimeoutException)
+            {
+              
+            }
+        }
     }
 }

@@ -20,13 +20,13 @@ public class RegisterActions
         _driver.Navigate().GoToUrl(ConfigReader.GetUrl("RegisterPage"));
     }
 
-    public void FillRegistrationForm(string firstNameKey, string lastNameKey, string emailKey, string passwordKey)
+    public void FillRegistrationForm()
     {
-        _registerPage.FillFirstName(ConfigReader.GetSetting(firstNameKey));
-        _registerPage.FillLastName(ConfigReader.GetSetting(lastNameKey));
-        _registerPage.FillEmail(ConfigReader.GetSetting(emailKey));
-        _registerPage.FillPassword(ConfigReader.GetSetting(passwordKey));
-        _registerPage.FillConfirmPassword(ConfigReader.GetSetting(passwordKey));
+        _registerPage.FillFirstName();
+        _registerPage.FillLastName();
+        _registerPage.FillEmail();
+        _registerPage.FillPassword();
+        _registerPage.FillConfirmPassword();
     }
 
     public void SubmitForm()

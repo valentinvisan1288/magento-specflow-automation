@@ -4,29 +4,28 @@
     "LoginPage": "https://magento.softwaretestingboard.com/customer/account/login",
     "RegisterPage": "https://magento.softwaretestingboard.com/customer/account/create/"
   },
-  "Accounts": {
-    "ValidEmail": "magentovalentin@test123.com",
-    "ValidPassword": "StrongPassword123!",
-    "InvalidEmail": "wrong_user_magento@test123.com",
-    "InvalidPassword": "(WrongPass456!"
-  },
-  "Locators": {
+  "Settings": {
+    "DismissNoticeButton": "/html/body/div[4]/div[2]/div[2]/div[2]/div[2]/button[1]/p",
     "SignInHeaderButton": "//header//li[@class='authorization-link']/a",
-    "LoginEmailInput": "//input[@id='email']",
-    "LoginPasswordInput": "//input[@id='pass']",
+    "LoginEmailBox": "//input[@id='email']",
+    "LoginPasswordBox": "//input[@id='pass']",
     "SignInButton": "//button[@id='send2']",
     "ForgotPasswordButton": "//a[@class='action remind']",
     "CreateAnAccountButton": "//button[span[text()='Create an Account']]",
     "FirstNameTextBox": "//input[@id='firstname']",
+    "FirstNameInput": "ZitekQA",
     "LastNameTextBox": "//input[@id='lastname']",
+    "LastNameInput": "MagentoDemo",
     "RegisterEmailTextBox": "//input[@id='email_address']",
     "RegisterPasswordTextBox": "//input[@id='password']",
-    "RegisterConfirmPasswordTextBox": "//input[@id='password-confirmation']"
-  },
-  "LoginPage": {
+    "RegisterConfirmPasswordTextBox": "//input[@id='password-confirmation']",
     "EmailInput": "magentovalentin@test123.com",
     "PasswordInput": "#ZNQ4jtPzHHfJMj",
-    "SignInButton": "//button[@id='send2']",
-    "LoginErrorMessage": "//div[contains(@class, 'message-error') and @data-ui-id='message-error']/div"
+    "LoginErrorMessage": "//div[contains(@class, 'message-error') and @data-ui-id='message-error']/div",
+    "ValidEmail": "magentovalentin@test123.com",
+    "ValidPassword": "StrongPassword123!",
+    "InvalidEmail": "wrong_user_magento@test123.com",
+    "InvalidPassword": "(WrongPass456!"
   }
 }
+
