@@ -1,17 +1,14 @@
 ﻿using OpenQA.Selenium;
-using specflowdemo.Pages;
 using specflowdemo.Utilities.Config;
 
 public class RegisterActions
 {
     private readonly IWebDriver _driver;
-    private readonly HomePage _homePage;
     private readonly RegisterPage _registerPage;
 
     public RegisterActions(IWebDriver driver)
     {
         _driver = driver;
-        _homePage = new HomePage(driver);
         _registerPage = new RegisterPage(driver);
     }
 

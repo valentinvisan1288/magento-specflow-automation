@@ -25,7 +25,7 @@ namespace specflowdemo.StepDefinitions
         [Given("an anonymous user has navigated to create an account from the main page")]
         public void GivenUserNavigatesToRegisterPage()
         {
-            _driver.Navigate().GoToUrl(ConfigReader.GetUrl("RegisterPage"));
+            _registerActions.NavigateToRegisterPage();
         }
 
         [When("the anonymous user submits the mandatory account details")]
