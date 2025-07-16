@@ -15,7 +15,6 @@ cd magento-specflow-automation
 
 ### 3. Open in Visual Studio
 - Open the `.sln` file using Visual Studio.
-- Restore NuGet packages via Tools > NuGet Package Manager > Manage NuGet Packages for Solution.
 
 ### 4. Required NuGet Packages
 Go to **Tools > NuGet Package Manager > Manage NuGet Packages for Solution**.
